@@ -16,13 +16,15 @@ This project contains a full step-by-step deployment of a Java application serve
 ---
 
 ## 📁 Project Structure
-java-tomcat-deployment/
+<pre> ``` 
+  java-tomcat-deployment/
 ├── README.md
 ├── install_tomcat.sh
 ├── tomcat.service
 └── docs/
 └── java_server_deployment.pdf
 
+  ``` </pre>
 
 ---
 
