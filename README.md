@@ -22,7 +22,7 @@ This project contains a full step-by-step deployment of a Java application serve
 ├── install_tomcat.sh
 ├── tomcat.service
 └── docs/
-└── java_server_deployment.pdf
+      └── java_server_deployment.pdf
 </pre>
 
 ---
