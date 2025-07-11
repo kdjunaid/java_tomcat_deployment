@@ -6,30 +6,30 @@
 
 set -e
 
-echo "📦 Installing Java (OpenJDK)..."
+echo "Installing Java (OpenJDK)..."
 sudo apt update && sudo apt install default-jdk -y
 
-echo "👤 Creating tomcat user and group..."
+echo "Creating tomcat user and group..."
 sudo groupadd -f tomcat
 sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat || true
 sudo mkdir -p /opt/tomcat
 
-echo "⬇️ Downloading Apache Tomcat..."
+echo "Downloading Apache Tomcat..."
 cd /tmp
 curl -O https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.34/bin/apache-tomcat-10.1.34.tar.gz
 
-echo "🔒 Verifying SHA512 checksum..."
+echo "Verifying SHA512 checksum..."
 curl -O https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.34/bin/apache-tomcat-10.1.34.tar.gz.sha512
 sha512sum -c apache-tomcat-10.1.34.tar.gz.sha512
 
-echo "📂 Extracting to /opt/tomcat..."
+echo "Extracting to /opt/tomcat..."
 sudo tar xzvf apache-tomcat-10.1.34.tar.gz -C /opt/tomcat --strip-components=1
 
-echo "🔧 Setting permissions..."
+echo "Setting permissions..."
 sudo chown -RH tomcat: /opt/tomcat
 sudo chmod +x /opt/tomcat/bin/*.sh
 
-echo "✅ Done! Tomcat is installed in /opt/tomcat"
+echo "Done! Tomcat is installed in /opt/tomcat"
 
 echo "Create System Unit File"
 sudo update-java-alternatives -l
